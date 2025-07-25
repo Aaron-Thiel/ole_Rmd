@@ -1,0 +1,16 @@
+---
+title: "Muster Presentation"
+author: "Ole Thiel"
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: Madrid
+    colortheme: beaver
+  pdf_document: default
+---
+
+# Image
+
+Example image:
+
+![](tu.png){width=50%}

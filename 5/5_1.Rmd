@@ -1,0 +1,34 @@
+---
+title: "Contract Termination Letter"
+author: "Ole Thiel"
+output: pagedown::html_letter
+params:
+  recipient: "Mustermann"
+  date: \today
+  title: "Contract Termination Letter"
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhf{} % Clear header and footer
+---
+
+<div style="text-align: right;">
+Muster GmbH  <br/>
+Musterstraße 1  <br/>
+12345 Musterstadt  <br/><br/>
+`r Sys.Date()`
+</div>
+
+Ole Thiel  
+Musterstraße 1  
+12345 Musterstadt  
+
+Dear Sir or Madam,
+
+Please be informed that I would like to cancel my contract with you.
+
+Sincerly,  
+<div class="signature">
+<img src="tu.png" height="30"/>
+</div>
+Ole Thiel

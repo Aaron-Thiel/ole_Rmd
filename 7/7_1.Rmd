@@ -1,0 +1,22 @@
+---
+title: "Muster Presentation"
+author: "Ole Thiel"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader
+---
+# Table
+```{r, echo=FALSE}
+knitr::kable(head(cars))
+```
+
+<img src="tu.png" width="200px" style="position:absolute; right:2em; bottom:2em;">
+---
+# Interactive Plot
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(plotly)
+plotly::ggplotly(ggplot(cars, aes(speed, dist)) + geom_point())
+```
+
+<img src="tu.png" width="200px" style="position:absolute; right:2em; bottom:2em;">

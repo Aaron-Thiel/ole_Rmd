@@ -1,0 +1,52 @@
+---
+title: "Thesis Title"
+author: "Ole"
+date: \today
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+bibliography: references.bib
+---
+
+# Introduction
+
+A citation [@baumer2015r].
+
+# Methods
+
+## Data Collection
+
+## Data Analysis
+
+# Results
+
+## Data Summary
+
+```{r summary_dataset, echo=TRUE}
+summary(cars)
+```
+
+The mean car speed is `r round(mean(cars$speed), 2)`.
+
+## Figures and Tables
+
+### Figure
+
+```{r plot_dataset, fig.cap="Scatter plot of Petal Length vs. Petal Width.", echo=FALSE}
+# This code chunk uses base R's plot function.
+plot(cars)
+```
+
+### Table
+
+```{r table_dataset, echo=FALSE}
+knitr::kable(
+  head(cars, 10),
+  caption = "The first 10 rows of the Cars dataset."
+)
+```
+
+# Conclusion
+
+# References

@@ -1,0 +1,14 @@
+---
+output: pdf_document
+bibliography: references.bib
+nocite:  |
+    @*
+csl: university-of-york-mla.csl
+---
+
+# Introduction
+Please refer to the source @baumer2015r.
+
+# References
+::: {#refs}
+:::

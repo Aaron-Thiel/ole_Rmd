@@ -1,0 +1,80 @@
+---
+title: "Interactive Histogram with Multiple Inputs"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+# This chunk sets global options for knitr.
+# 'echo = TRUE' means the code in subsequent chunks will be shown in the output.
+# 'include = FALSE' for this setup chunk means the setup code itself won't be shown.
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load the shiny package for UI and server functions.
+library(shiny)
+# Load the plotly package for interactive plots (an htmlwidget).
+library(plotly)
+```
+
+This is an interactive application built with R Markdown and Shiny. You can adjust the number of observations, the bin width of the histogram, and the color of the bars.
+
+```{r histogram_app_multiple_inputs, echo=FALSE}
+# UI (User Interface) definition for the Shiny app
+sidebarLayout(
+  # Sidebar panel for multiple input controls
+  sidebarPanel(
+    # Slider input for the number of observations
+    sliderInput("num_obs",
+                "Number of Observations:",
+                min = 10,
+                max = 1000,
+                value = 500),
+
+    # Numeric input for histogram bin width
+    numericInput("bin_width",
+                 "Bin Width:",
+                 value = 30, # Default number of bins
+                 min = 1,
+                 max = 100),
+
+    # Select input for histogram color
+    selectInput("hist_color",
+                "Histogram Color:",
+                choices = c("steelblue", "darkgreen", "purple", "orange"),
+                selected = "steelblue")
+  ),
+
+  # Main panel for outputs
+  mainPanel(
+    # plotlyOutput creates a placeholder for an interactive plotly graph.
+    "This histogram shows a normal distribution. Adjust the inputs on the left to see changes.",
+    plotlyOutput("dist_plot_plotly")
+  )
+)
+
+# Server logic definition for the Shiny app
+# This section defines how inputs affect outputs.
+
+# output$dist_plot_plotly corresponds to the plotlyOutput("dist_plot_plotly") in the UI.
+output$dist_plot_plotly <- renderPlotly({
+  # renderPlotly is a reactive expression that generates a plotly graph.
+  # It automatically re-runs whenever any of its reactive inputs (input$num_obs,
+  # input$bin_width, input$hist_color) change.
+
+  # Generate random data (normal distribution) based on the current slider value.
+  hist_data <- rnorm(input$num_obs)
+
+  # Calculate bin breaks based on the data range and desired number of bins (bin_width)
+  # Using 'length.out = input$bin_width + 1' to get the specified number of bins
+  bins <- seq(min(hist_data), max(hist_data), length.out = input$bin_width + 1)
+
+  # Create an interactive histogram using plotly
+  plot_ly(x = hist_data, type = "histogram",
+          xbins = list(start = min(hist_data), end = max(hist_data), size = (max(hist_data) - min(hist_data)) / input$bin_width),
+          marker = list(color = input$hist_color, line = list(color = "white", width = 1))) %>%
+    layout(title = paste("Histogram with", input$num_obs, "Observations"),
+           xaxis = list(title = "Value"),
+           yaxis = list(title = "Frequency"),
+           bargap = 0.05) # Add a small gap between bars for better visual separation
+})
+```

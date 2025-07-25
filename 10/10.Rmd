@@ -1,0 +1,28 @@
+---
+title: "Interactive Histogram"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(shiny)
+```
+
+This is a simple interactive application built with R Markdown and Shiny. Use the slider to change the number of observations in the histogram.
+
+```{r, echo=FALSE}
+inputPanel(
+  sliderInput("num_obs", label = "Number of Observations:",
+              min = 10, max = 1000, value = 500, step = 50)
+)
+
+renderPlot({
+  hist_data <- rnorm(input$num_obs)
+  hist(hist_data,
+       main = paste("Histogram with", input$num_obs, "Observations"),
+       xlab = "Value",
+       col = "steelblue",
+       border = "white")
+})
+```

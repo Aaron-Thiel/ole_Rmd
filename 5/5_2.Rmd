@@ -1,0 +1,24 @@
+---
+output: pdf_document
+documentclass: scrlttr2
+classoption: [version=last, fromlogo]
+fontsize: 11pt
+includes:
+  in_header: preamble.tex
+---
+
+\setkomavar{fromname}{Ole Thiel}
+\setkomavar{fromaddress}{Musterstraße 1\\12345 Musterstadt}
+\setkomavar{fromlogo}{\includegraphics[width=4cm]{tu.png}}
+\setkomavar{toname}{Muster GmbH}
+\setkomavar{toaddress}{Musterstraße 1\\12345 Musterstadt}
+\setkomavar{subject}{Vertragskündigung}
+
+\begin{letter}{Muster GmbH\\Musterstraße 1\\12345 Musterstadt}
+\opening{Sehr geehrte Damen und Herren,}
+
+hiermit würde ich gerne meinen Vertrag kündigen, da ich ein neues Angebot erhalten habe.
+
+\closing{Mit freundlichen Grüßen,}
+
+\end{letter}

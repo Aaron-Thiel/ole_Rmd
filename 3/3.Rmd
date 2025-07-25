@@ -1,0 +1,29 @@
+---
+output:
+  bookdown::pdf_document2:
+    toc: true
+    lof: true
+    lot: true
+    number_sections: true
+    includes:
+      in_header: preamble.tex
+      before_body: titlepage.tex
+    makeglossaries: true
+bibliography: references.bib
+---
+
+\listoffigures
+\listoftables
+
+\newpage
+
+# Introduction
+This document leverages \gls{rmd} to integrate text and data, built upon the robust \gls{latex} typesetting system. The \gls{toc} helps in navigating the document easily.
+
+\newpage
+# Appendix {-}
+\appendix
+
+\newpage
+# Glossary {-}
+\printglossaries

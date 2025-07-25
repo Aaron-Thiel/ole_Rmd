@@ -1,0 +1,40 @@
+---
+output:
+  bookdown::pdf_document2:
+    toc: true
+    lof: true
+    lot: true
+    number_sections: true
+    includes:
+      in_header: preamble.tex
+      before_body: titlepage.tex
+bibliography: references.bib
+---
+
+\newpage
+# Task
+```{r multi-panel-plot, fig.cap="Multiplot Layout"}
+par(mfrow = c(2, 2))
+plot(runif(100), main = "A")
+plot(runif(100), main = "B")
+plot(runif(100), main = "C")
+plot(runif(100), main = "D")
+```
+
+\newpage
+# Task
+```{r excel-tabelle, message=FALSE, warning=FALSE}
+library(kableExtra)
+daten <- readxl::read_excel("excel.xlsx", sheet = 1)
+kableExtra::kable(daten, booktabs = TRUE, caption = "Excel-Tabelle") %>%
+  kableExtra::kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+\newpage
+# Task
+\begin{align}
+I &= \int_{0}^{1} x^2 \, dx
+\label{Integral}
+\end{align}
+
+Equation \ref{Integral} is an integral equation.
