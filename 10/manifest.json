@@ -1,7 +1,9 @@
 {
   "version": 1,
-  "locale": "en_US",
-  "platform": "r",
+  "locale": "en_US.UTF-8",
+  "platform": {
+    "version": "2023.06.0"
+  },
   "metadata": {
     "appmode": "rmd-shiny",
     "primary_doc": "10.Rmd",
@@ -74,6 +76,9 @@
   ],
   "r_versions": {
     "primary": "4.3.0"
+  },
+  "environment": {
+    "r": "4.3.0"
   },
   "users": [],
   "env_vars": {}
