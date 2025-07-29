@@ -9,7 +9,8 @@
     "bundle_id": null,
     "content_url": null,
     "last_deployed_time": null,
-    "description": null
+    "description": null,
+    "r_version": "4.3.0"
   },
   "applications": [
     {
