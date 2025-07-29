@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "locale": "en_US",
+  "platform": "r",
+  "metadata": {
+    "appmode": "rmd-shiny",
+    "primary_doc": "10.Rmd",
+    "entrypoint": null,
+    "bundle_id": null,
+    "content_url": null,
+    "last_deployed_time": null,
+    "description": null
+  },
+  "applications": [
+    {
+      "id": "10.Rmd",
+      "name": "10.Rmd",
+      "bundle_id": null,
+      "url": null,
+      "primary_doc": "10.Rmd",
+      "app_mode": "rmd-shiny",
+      "content_category": "application",
+      "r_version": "4.3.0",
+      "quarto_version": null,
+      "python_version": null,
+      "metadata": {
+        "title": "Interactive Histogram",
+        "description": "A simple interactive histogram application built with R Markdown and Shiny."
+      }
+    }
+  ],
+  "files": {
+    "10.Rmd": {
+      "checksum": "a7c2e0b1c3d4e5f6a7b8c9d0e1f2a3b4"
+    },
+    "run_app.R": {
+      "checksum": "b8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3"
+    }
+  },
+  "dependencies": [
+    {
+      "name": "shiny",
+      "version": "1.7.4",
+      "source": "CRAN"
+    },
+    {
+      "name": "rmarkdown",
+      "version": "2.23",
+      "source": "CRAN"
+    },
+    {
+      "name": "knitr",
+      "version": "1.43",
+      "source": "CRAN"
+    }
+  ],
+  "r_packages": [
+    {
+      "Package": "shiny",
+      "Version": "1.7.4",
+      "Source": "CRAN"
+    },
+    {
+      "Package": "rmarkdown",
+      "Version": "2.23",
+      "Source": "CRAN"
+    },
+    {
+      "Package": "knitr",
+      "Version": "1.43",
+      "Source": "CRAN"
+    }
+  ],
+  "r_versions": {
+    "primary": "4.3.0"
+  },
+  "users": [],
+  "env_vars": {}
+}
