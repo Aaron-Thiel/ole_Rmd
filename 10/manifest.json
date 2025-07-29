@@ -7,7 +7,7 @@
   "metadata": {
     "appmode": "rmd-shiny",
     "primary_doc": "10.Rmd",
-    "entrypoint": null,
+    "entrypoint": "10.Rmd",
     "bundle_id": null,
     "content_url": null,
     "last_deployed_time": null,
